@@ -1,7 +1,7 @@
 const chatboxElt = document.getElementById("chatbox");
 const notificationSound = new Audio("https://www.myinstants.com/media/sounds/cannard.mp3");
 const inputElt = document.getElementById("message");
-const windowURL = "https://ashes-arise.forumactif.com/chatbox/";
+const windowURL = "URL DE LA CHATBOX";
 const easterEgg = new Audio("https://www.myinstants.com/media/sounds/puissance-et-gloire.mp3");
 
 //Vérifie si la fenêtre chatbox est cachée
