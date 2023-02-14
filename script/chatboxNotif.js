@@ -9,8 +9,8 @@ const coinEE = new Audio("https://www.myinstants.com/media/sounds/couin.mp3");
 const chutEE = new Audio("https://www.myinstants.com/media/sounds/ta-gueule_6iavH8Q.mp3");
 //Fenêtres autorisées
 const windowsURL = [
-    "URL",
-    "URL"
+    "https://ashes-arise.forumactif.com/chatbox/",
+    "https://ashes-arise.forumactif.com/chatbox/index.php?archives"
 ];
 
 //Vérifie le statut de la fenêtre chatbox
