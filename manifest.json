@@ -2,7 +2,7 @@
 
     "manifest_version": 3,
     "name": "ChatboxNotif",
-    "version": "1.0",
+    "version": "1.1",
   
     "description": "Chatbox FA : Notifications sonores et nouveaux messages.",
   
@@ -12,7 +12,7 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*URL DU SITE*"],
+        "matches": ["*://*.ashes-arise.forumactif.com/chatbox/*"],
         "js": ["script/ChatboxNotif.js"]
       }
     ]
