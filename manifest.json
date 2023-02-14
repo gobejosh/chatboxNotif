@@ -12,7 +12,7 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*.ashes-arise.forumactif.com/chatbox/*"],
+        "matches": ["DOMAIN"],
         "js": ["script/ChatboxNotif.js"]
       }
     ]
