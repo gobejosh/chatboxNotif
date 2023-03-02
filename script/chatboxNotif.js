@@ -1,7 +1,7 @@
 const chatboxElt = document.getElementById("chatbox");
 const inputElt = document.getElementById("message");
 //Fichiers MP3
-const notificationSound = new Audio("https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3");
+const notificationSound = new Audio("https://www.cjoint.com/doc/16_10/FJukKWvbeEK_MSN-Sound.mp3");
 const puissanceEE = new Audio("https://www.myinstants.com/media/sounds/puissance-et-gloire.mp3");
 const wizzEE = new Audio("https://www.myinstants.com/media/sounds/msn-wizz-sound.mp3");
 const hahaEE = new Audio("https://www.myinstants.com/media/sounds/the-simpsons-nelsons-haha.mp3");
