@@ -13,8 +13,9 @@ const windowsURL = [
     "https://ashes-arise.forumactif.com/chatbox/index.php?archives"
 ];
 
-//Vérifie le statut de la fenêtre chatbox
 document.addEventListener("visibilitychange", () => {
+
+    //Vérifie le statut de la fenêtre chatbox
     if (document.visibilityState === "hidden") {
         //Créé un objet observant la chatbox
         let observer = new MutationObserver(mutations => {
@@ -24,7 +25,20 @@ document.addEventListener("visibilitychange", () => {
                     && document.visibilityState === "hidden"
                     && windowsURL.includes(window.location.href)) {
                     document.title = "NOUVEAUX MESSAGES";
-                    notificationSound.play();
+                    //Easter Egg
+                    if (mutation.addedNodes.item(0).textContent.includes("/PUISSANCE")) {
+                        puissanceEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/WIZ")) {
+                        wizzEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/HAHA")) {
+                        hahaEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/COIN")) {
+                        coinEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/CHUT")) {
+                        chutEE.play();
+                    } else {
+                        notificationSound.play();
+                    }
                 };
             });
         });
@@ -33,24 +47,34 @@ document.addEventListener("visibilitychange", () => {
             childList: true
         });
 
+    //Vérifie le statut de la fenêtre chatbox
     } else {
         //Réinitialise la chatbox si active
         document.title = "ChatBox";
-        delete MutationObserver;
+        //Créé un objet observant la chatbox
+        let observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                //Vérifie si des enfants sont générés
+                if (document.visibilityState === "visible"
+                    && windowsURL.includes(window.location.href)) {
+                    //Easter Egg
+                    if (mutation.addedNodes.item(0).textContent.includes("/PUISSANCE")) {
+                        puissanceEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/WIZ")) {
+                        wizzEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/HAHA")) {
+                        hahaEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/COIN")) {
+                        coinEE.play();
+                    } else if (mutation.addedNodes.item(0).textContent.includes("/CHUT")) {
+                        chutEE.play();
+                    }
+                };
+            });
+        });
+        //Paramètres à observer
+        observer.observe(chatboxElt, {
+            childList: true
+        });
     };
-});
-
-//Easter Egg
-inputElt.addEventListener("change", () => {
-    if (inputElt.value == "/PUISSANCE") {
-        puissanceEE.play();
-    } else if (inputElt.value == "/WIZ") {
-        wizzEE.play();
-    } else if (inputElt.value == "/HAHA") {
-        hahaEE.play();
-    } else if (inputElt.value == "/COIN") {
-        coinEE.play();
-    } else if (inputElt.value == "/CHUT") {
-        chutEE.play();
-    }
 });
