@@ -36,6 +36,7 @@ document.addEventListener("visibilitychange", () => {
     } else {
         //Réinitialise la chatbox si active
         document.title = "ChatBox";
+        delete MutationObserver;
     };
 });
 
